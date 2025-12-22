@@ -5,6 +5,7 @@
   setuptools,
   llm,
   llm-anthropic,
+  json-schema-to-pydantic,
   anthropic,
   pytestCheckHook,
   pytest-asyncio,
@@ -14,14 +15,14 @@
 
 buildPythonPackage rec {
   pname = "llm-anthropic";
-  version = "0.20";
+  version = "0.23";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "simonw";
     repo = "llm-anthropic";
     tag = version;
-    hash = "sha256-tZCFbrsACJl1hC5tSbxJzBBLY8mdcCNjshZilSCAslM=";
+    hash = "sha256-ZO9hoDv3YLl8ZCcd5UEDdD5VNPa83N639z1ZxJaFt7Y=";
   };
 
   build-system = [
@@ -31,6 +32,7 @@ buildPythonPackage rec {
   dependencies = [
     anthropic
     llm
+    json-schema-to-pydantic
   ];
 
   nativeCheckInputs = [
